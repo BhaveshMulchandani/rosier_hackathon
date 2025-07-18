@@ -10,7 +10,6 @@ export default {
         playfair: ['"Playfair Display"', 'serif'],
         inter: ['Inter', 'sans-serif'],
         irish: ["Irish Grover"],
-        moonrocks: ['"Rubik Moonrocks"'],
       },
     },
   },
