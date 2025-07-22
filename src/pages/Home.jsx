@@ -281,6 +281,20 @@ const Home = () => {
           </Swiper>
         </div>
       </div>
+
+      {/* 4th half */}
+
+      <div className="font-inter flex items-center justify-center bg-[#ffdbd4]">
+         <div className="flex flex-col mt-6 ">
+            <h1 className="text-3xl font-bold text-[#4E342E]">😋 What Makes Our Products Authentic 😋</h1>
+            <div>
+              <img src="" alt="" />
+            </div>
+            <div><img src="" alt="" /></div>
+            <div><img src="" alt="" /></div>
+            <div><img src="" alt="" /></div>
+          </div>
+      </div>
     </>
   );
 };

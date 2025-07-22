@@ -1,16 +1,18 @@
 import React from 'react'
 import logo from '../assets/rosier_logo.jpg'
 import { Link } from 'react-router-dom'
+import '../App.css'
+
 
 const Navbar = () => {
   return (
    <>
    <div className='flex items-center justify-between px-10 py-5'>
     <div><img className='rounded-full w-14 h-14' src={logo} alt="logo" /></div>
-    <div className=''>
+    <div className='font-Irish'>
         <ul className='flex items-center justify-center gap-10 text-lg font-irish text-[#4E342E]'>
         <Link to="/"><li>HOME</li></Link>
-        <Link to="/flavors"><li>FLAVORS</li></Link>
+        <Link to="/products"><li>PRODUCTS</li></Link>
         <Link to="/our-story"><li>OUR STORY</li></Link>
         <Link to="/contact"><li>CONTACT</li></Link>
     </ul>
