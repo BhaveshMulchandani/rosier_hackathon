@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
    <>
    <div className='flex items-center justify-between px-10 py-5'>
-    <div><img className='rounded-full w-14 h-14' src={logo} alt="logo" /></div>
+    <div><Link to={'/'}><img className='rounded-full w-14 h-14' src={logo} alt="logo" /></Link></div>
     <div className='font-Irish'>
         <ul className='flex items-center justify-center gap-10 text-lg font-irish text-[#4E342E]'>
         <Link to="/"><li>HOME</li></Link>
@@ -18,7 +18,7 @@ const Navbar = () => {
     </div>
     <div className='flex items-center justify-center gap-5 text-2xl font-irish  text-[#4E342E]'>
            <Link to={`/register`}><i className="ri-user-3-line"></i></Link>
-            <i className="ri-shopping-cart-2-line"></i>
+            <Link><i className="ri-shopping-cart-2-line"></i></Link>
     </div>
    </div>
    </>
