@@ -5,7 +5,7 @@ import founder1 from "../assets/founder1.jpg";
 import founder2 from "../assets/Founder2.jpg";
 import rosier_product_family from "../assets/rosier_product_family.webp";
 import instaicon from "../assets/instaicon.webp";
-import rosier_logo from "../assets/rosier_logo.jpg";
+import whatsapp from "../assets/whatsapp.jpeg";
 import youtube_icon from '../assets/youtube_icon.jpeg'
 
 const About = () => {
@@ -133,8 +133,8 @@ const About = () => {
       </div>
 
       <div className="flex items-center justify-start gap-4 fixed bottom-0 left-0 right-0 p-4">
-        <a   href="https://www.instagram.com/rosier.foods/" target="_blank" rel="noopener noreferrer"><img className="rounded-full w-20 h-20" src={instaicon} alt="instaicon" /></a>
-        <a href="https://www.rosierfoods.com/" target="_blank" rel="noopener noreferrer"><img className="rounded-full w-20 h-20" src={rosier_logo} alt="rosier" /></a>
+        <a  href="https://www.instagram.com/rosier.foods/" target="_blank" rel="noopener noreferrer"><img className="rounded-full w-20 h-20" src={instaicon} alt="instaicon" /></a>
+        <a href="https://api.whatsapp.com/send?phone=919711580581&text=Hi" target="_blank" rel="noopener noreferrer"><img className="rounded-full w-20 h-20" src={whatsapp} alt="rosier" /></a>
         <a href="https://www.youtube.com/channel/UCq82cLzzIqllEOsdpb_2lxg" target="_blank" rel="noopener noreferrer"><img className="rounded-full w-20 h-20" src={youtube_icon} alt="youtube_icon" /></a>
       </div>
     </>
