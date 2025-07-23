@@ -14,7 +14,6 @@ const Navbar = () => {
         <Link to="/"><li>HOME</li></Link>
         <Link to="/products"><li>PRODUCTS</li></Link>
         <Link to="/our-story"><li>OUR STORY</li></Link>
-        <Link to="/contact"><li>CONTACT</li></Link>
     </ul>
     </div>
     <div className='flex items-center justify-center gap-5 text-2xl font-irish  text-[#4E342E]'>
