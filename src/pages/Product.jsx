@@ -11,9 +11,9 @@ import mustard_oil from "../assets/product_images/mustard_oil.webp";
 import nut_butter from "../assets/product_images/nut_butter.webp";
 import sunflower_oil from "../assets/product_images/sunflower_oil.webp";
 import { nanoid } from "nanoid";
+import { Link } from "react-router-dom";
 
-const Product = () => {
-  const products = [
+export const products = [
     {
       product_id: nanoid(),
       product_image: ghee,
@@ -84,6 +84,8 @@ const Product = () => {
       product_price: 1799,
     },
   ];
+
+  const Product = () => {
   return (
     <div className="bg-[#b4bd62] min-h-screen">
       <Navbar />
@@ -105,9 +107,12 @@ const Product = () => {
             ₹{product.product_price}
           </h4>
 
+          <Link to={`/products/${product.product_id}`}>
           <button className="w-full py-2 rounded-md text-lg font-semibold border border-[#4a3127] hover:border-[#b4bd62] hover:bg-[#b4bd62]  text-[#4a3127] hover:ring-1 hover:ring-[#4a3127] transition">
             Add To Cart
           </button>
+          </Link>
+          
         </div>
       ))}
       </div>
