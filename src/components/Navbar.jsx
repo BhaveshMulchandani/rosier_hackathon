@@ -17,7 +17,7 @@ const Navbar = () => {
     </ul>
     </div>
     <div className='flex items-center justify-center gap-5 text-2xl font-irish  text-[#4E342E]'>
-            <i className="ri-user-3-line"></i>
+           <Link to={`/register`}><i className="ri-user-3-line"></i></Link>
             <i className="ri-shopping-cart-2-line"></i>
     </div>
    </div>
