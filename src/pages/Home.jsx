@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import gheejar from "../assets/main_product-removebg-preview.png";
 import gheejar2 from "../assets/main_product.webp";
@@ -6,20 +6,22 @@ import img from "../assets/img.png";
 import img1 from "../assets/img_1.png";
 import img2 from "../assets/img_2.png";
 import img3 from "../assets/img_3.png";
-import swiggy from '../assets/swiggy.png'
-import zepto from '../assets/zepto.png'
-import flipkart from '../assets/flipkart.png'
-import amazone from '../assets/amazone.png' 
+import swiggy from "../assets/swiggy.png";
+import zepto from "../assets/zepto.png";
+import flipkart from "../assets/flipkart.png";
+import amazone from "../assets/amazone.png";
 import farmvideo from "../assets/farmvideo.mov";
+import { Link } from "react-router-dom";
+import { products } from "./Product";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
-import { delay } from "motion";
 
 const Home = () => {
+  const [selectimage, setselectimage] = useState(products[0].product_image);
   return (
     <>
       <Navbar />
@@ -72,38 +74,29 @@ const Home = () => {
             </h3>
           </div>
           <div className=" p-6">
-            <button className="bg-[#b4bd62] text-black px-4 py-2 rounded-3xl hover:bg-[#747d27] transition font-semibold">
-              Try Now{" "}
-              <i className="ri-arrow-right-line text-black font-semibold ml-2"></i>
-            </button>
+            <Link to="/products">
+              <button className="bg-[#b4bd62] text-black px-4 py-2 rounded-3xl hover:bg-[#747d27] transition font-semibold">
+                Try Now{" "}
+                <i className="ri-arrow-right-line text-black font-semibold ml-2"></i>
+              </button>
+            </Link>
             <div className="flex items-center gap-4 mt-6">
-              <img
-                className="w-20 h-20 object-contain rounded-full bg-[#b4bd62] p-1 border hover:border-[#795548] transition"
-                src={gheejar}
-                alt="jar"
-              />
-              <img
-                className="w-20 h-20 object-contain rounded-full bg-[#b4bd62] p-1 border hover:border-[#795548] transition"
-                src={gheejar}
-                alt="jar"
-              />
-              <img
-                className="w-20 h-20 object-contain rounded-full bg-[#b4bd62] p-1 border hover:border-[#795548] transition"
-                src={gheejar}
-                alt="jar"
-              />
-              <img
-                className="w-20 h-20 object-contain rounded-full bg-[#b4bd62] p-1 border hover:border-[#795548] transition"
-                src={gheejar}
-                alt="jar"
-              />
+              {products.slice(0, 4).map((product) => (
+                <img
+                  key={product.product_id}
+                  className="w-20 h-20 object-contain rounded-full bg-[#b4bd62] p-1 border hover:border-[#795548] transition"
+                  src={product.product_image}
+                  alt={product.product_name}
+                  onClick={() => setselectimage(product.product_image)}
+                />
+              ))}
             </div>
           </div>
         </div>
         <div className="ml-24 mt-10">
           <div className="h-4/5 w-96 flex items-center">
             <img
-              src={gheejar2}
+              src={selectimage}
               alt="ghee"
               className="rounded-full w-96 h-auto object-contain"
             />
@@ -138,149 +131,25 @@ const Home = () => {
             modules={[EffectCoverflow, Pagination, Autoplay]}
             className="mySwiper"
           >
-            <SwiperSlide className="!w-[280px]">
-              <div className="bg-transparent p-6 rounded-lg ">
-                <img src={gheejar2} alt="gheejar" className="rounded-lg" />
-                <div className="mt-2">
-                  <h1 className=" text-xl font-bold">Gircow A2 Vedic Ghee</h1>
-                  <h4 className="text-lg font-medium tracking-tight">
-                    Authentic A2 vedic cow ghee without any preservatives
-                  </h4>
+            {products.map((product) => (
+              <SwiperSlide className="!w-[280px]">
+                <div className="bg-transparent p-6 rounded-lg ">
+                  <img src={product.product_image} alt="gheejar" className="rounded-lg" />
+                  <div className="mt-2">
+                    <h1 className=" text-xl font-bold">{product.product_name}</h1>
+                    <h4 className="text-lg font-medium tracking-tight">
+                      {product.product_description}
+                    </h4>
+                  </div>
+                  <div className="flex items-center justify-between text-lg font-medium mt-3">
+                    <span>{product.product_price}</span>
+                    <span>
+                      <i className="ri-shopping-cart-2-line"></i>
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-center justify-between text-lg font-medium mt-3">
-                  <span>₹ 199</span>
-                  <span>
-                    <i className="ri-shopping-cart-2-line"></i>
-                  </span>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide className="!w-[280px]">
-              <div className="bg-transparent p-6 rounded-lg ">
-                <img src={gheejar2} alt="gheejar" className="rounded-lg" />
-                <div className="mt-2">
-                  <h1 className=" text-xl font-bold">Gircow A2 Vedic Ghee</h1>
-                  <h4 className="text-lg font-medium tracking-tight">
-                    Authentic A2 vedic cow ghee without any preservatives
-                  </h4>
-                </div>
-                <div className="flex items-center justify-between text-lg font-medium mt-3">
-                  <span>₹ 199</span>
-                  <span>
-                    <i className="ri-shopping-cart-2-line"></i>
-                  </span>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide className="!w-[280px]">
-              <div className="bg-transparent p-6 rounded-lg ">
-                <img src={gheejar2} alt="gheejar" className="rounded-lg" />
-                <div className="mt-2">
-                  <h1 className=" text-xl font-bold">Gircow A2 Vedic Ghee</h1>
-                  <h4 className="text-lg font-medium tracking-tight">
-                    Authentic A2 vedic cow ghee without any preservatives
-                  </h4>
-                </div>
-                <div className="flex items-center justify-between text-lg font-medium mt-3">
-                  <span>₹ 199</span>
-                  <span>
-                    <i className="ri-shopping-cart-2-line"></i>
-                  </span>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide className="!w-[280px]">
-              <div className="bg-transparent p-6 rounded-lg ">
-                <img src={gheejar2} alt="gheejar" className="rounded-lg" />
-                <div className="mt-2">
-                  <h1 className=" text-xl font-bold">Gircow A2 Vedic Ghee</h1>
-                  <h4 className="text-lg font-medium tracking-tight">
-                    Authentic A2 vedic cow ghee without any preservatives
-                  </h4>
-                </div>
-                <div className="flex items-center justify-between text-lg font-medium mt-3">
-                  <span>₹ 199</span>
-                  <span>
-                    <i className="ri-shopping-cart-2-line"></i>
-                  </span>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide className="!w-[280px]">
-              <div className="bg-transparent p-6 rounded-lg ">
-                <img src={gheejar2} alt="gheejar" className="rounded-lg" />
-                <div className="mt-2">
-                  <h1 className=" text-xl font-bold">Gircow A2 Vedic Ghee</h1>
-                  <h4 className="text-lg font-medium tracking-tight">
-                    Authentic A2 vedic cow ghee without any preservatives
-                  </h4>
-                </div>
-                <div className="flex items-center justify-between text-lg font-medium mt-3">
-                  <span>₹ 199</span>
-                  <span>
-                    <i className="ri-shopping-cart-2-line"></i>
-                  </span>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide className="!w-[280px]">
-              <div className="bg-transparent p-6 rounded-lg ">
-                <img src={gheejar2} alt="gheejar" className="rounded-lg" />
-                <div className="mt-2">
-                  <h1 className=" text-xl font-bold">Gircow A2 Vedic Ghee</h1>
-                  <h4 className="text-lg font-medium tracking-tight">
-                    Authentic A2 vedic cow ghee without any preservatives
-                  </h4>
-                </div>
-                <div className="flex items-center justify-between text-lg font-medium mt-3">
-                  <span>₹ 199</span>
-                  <span>
-                    <i className="ri-shopping-cart-2-line"></i>
-                  </span>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide className="!w-[280px]">
-              <div className="bg-transparent p-6 rounded-lg ">
-                <img src={gheejar2} alt="gheejar" className="rounded-lg" />
-                <div className="mt-2">
-                  <h1 className=" text-xl font-bold">Gircow A2 Vedic Ghee</h1>
-                  <h4 className="text-lg font-medium tracking-tight">
-                    Authentic A2 vedic cow ghee without any preservatives
-                  </h4>
-                </div>
-                <div className="flex items-center justify-between text-lg font-medium mt-3">
-                  <span>₹ 199</span>
-                  <span>
-                    <i className="ri-shopping-cart-2-line"></i>
-                  </span>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide className="!w-[280px]">
-              <div className="bg-transparent p-6 rounded-lg ">
-                <img src={gheejar2} alt="gheejar" className="rounded-lg" />
-                <div className="mt-2">
-                  <h1 className=" text-xl font-bold">Gircow A2 Vedic Ghee</h1>
-                  <h4 className="text-lg font-medium tracking-tight">
-                    Authentic A2 vedic cow ghee without any preservatives
-                  </h4>
-                </div>
-                <div className="flex items-center justify-between text-lg font-medium mt-3">
-                  <span>₹ 199</span>
-                  <span>
-                    <i className="ri-shopping-cart-2-line"></i>
-                  </span>
-                </div>
-              </div>
-            </SwiperSlide>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>
@@ -339,39 +208,30 @@ const Home = () => {
       </div>
 
       <div>
-        <video
-          src={farmvideo}
-          controls
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-        </video>
+        <video src={farmvideo} controls autoPlay muted loop playsInline></video>
       </div>
 
       <div className="overflow-hidden bg-[#FFDBD4] py-6">
-  <h1 className="text-4xl font-bold text-[#4E342E] text-center mb-6">
-    CATCH US HERE
-  </h1>
+        <h1 className="text-4xl font-bold text-[#4E342E] text-center mb-6">
+          CATCH US HERE
+        </h1>
 
-  <div className="whitespace-nowrap animate-marquee flex gap-16">
-    <img src={swiggy} alt="swiggy" className="h-20 inline-block" />
-    <img src={amazone} alt="amazon" className="h-16 inline-block" />
-    <img src={flipkart} alt="flipkart" className="h-20 inline-block" />
-    <img src={zepto} alt="zepto" className="h-20 inline-block" />
-    {/* Repeat if needed for smoother loop */}
-    <img src={swiggy} alt="swiggy" className="h-20 inline-block" />
-    <img src={amazone} alt="amazon" className="h-16 inline-block" />
-    <img src={flipkart} alt="flipkart" className="h-20 inline-block" />
-    <img src={zepto} alt="zepto" className="h-20 inline-block" />
-    <img src={swiggy} alt="swiggy" className="h-20 inline-block" />
-    <img src={amazone} alt="amazon" className="h-16 inline-block" />
-    <img src={flipkart} alt="flipkart" className="h-20 inline-block" />
-    <img src={zepto} alt="zepto" className="h-20 inline-block" />
-  </div>
-</div>
-
+        <div className="whitespace-nowrap animate-marquee flex gap-16">
+          <img src={swiggy} alt="swiggy" className="h-20 inline-block" />
+          <img src={amazone} alt="amazon" className="h-16 inline-block" />
+          <img src={flipkart} alt="flipkart" className="h-20 inline-block" />
+          <img src={zepto} alt="zepto" className="h-20 inline-block" />
+          {/* Repeat if needed for smoother loop */}
+          <img src={swiggy} alt="swiggy" className="h-20 inline-block" />
+          <img src={amazone} alt="amazon" className="h-16 inline-block" />
+          <img src={flipkart} alt="flipkart" className="h-20 inline-block" />
+          <img src={zepto} alt="zepto" className="h-20 inline-block" />
+          <img src={swiggy} alt="swiggy" className="h-20 inline-block" />
+          <img src={amazone} alt="amazon" className="h-16 inline-block" />
+          <img src={flipkart} alt="flipkart" className="h-20 inline-block" />
+          <img src={zepto} alt="zepto" className="h-20 inline-block" />
+        </div>
+      </div>
     </>
   );
 };

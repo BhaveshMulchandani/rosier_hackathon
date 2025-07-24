@@ -18,6 +18,7 @@ export const products = [
       product_id: nanoid(),
       product_image: ghee,
       product_name: " Gir Cow A2 Ghee - Made With Curd",
+      product_description: " Authentic and Without Preservatives",
       product_price: 1799,
     },
 
@@ -25,6 +26,7 @@ export const products = [
       product_id: nanoid(),
       product_image: khapliatta,
       product_name: "Khapli Aata - Organic Whole Wheat Flour",
+      product_description: " Authentic and Without Preservatives",
       product_price: 1799,
     },
 
@@ -32,6 +34,7 @@ export const products = [
       product_id: nanoid(),
       product_image: almond_butter,
       product_name: "Almond Butter - Creamy & Delicious",
+      product_description: " Authentic and Without Preservatives",
       product_price: 1799,
     },
 
@@ -39,6 +42,7 @@ export const products = [
       product_id: nanoid(),
       product_image: Berry_better,
       product_name: "Berry Coconut Butter - Fruity & Nutty",
+      product_description: " Authentic and Without Preservatives",
       product_price: 1799,
     },
 
@@ -46,6 +50,7 @@ export const products = [
       product_id: nanoid(),
       product_image: coconut_oil,
       product_name: "Coconut Oil - Stone Pressed & Organic",
+      product_description: " Authentic and Without Preservatives",
       product_price: 1799,
     },
 
@@ -53,6 +58,7 @@ export const products = [
       product_id: nanoid(),
       product_image: ground_nut_oil,
       product_name: "Ground Nut Oil - Stone Pressed & Organic",
+      product_description: " Authentic and Without Preservatives",
       product_price: 1799,
     },
 
@@ -60,6 +66,7 @@ export const products = [
       product_id: nanoid(),
       product_image: honey,
       product_name: "Honey - Pure & Natural",
+      product_description: " Authentic and Without Preservatives",
       product_price: 1799,
     },
 
@@ -67,6 +74,7 @@ export const products = [
       product_id: nanoid(),
       product_image: mustard_oil,
       product_name: "Mustard Oil - Stone Pressed & Organic",
+      product_description: " Authentic and Without Preservatives",
       product_price: 1799,
     },
 
@@ -74,6 +82,7 @@ export const products = [
       product_id: nanoid(),
       product_image: nut_butter,
       product_name: "Nut Butter - Creamy & Delicious",
+      product_description: " Authentic and Without Preservatives",
       product_price: 1799,
     },
 
@@ -81,6 +90,7 @@ export const products = [
       product_id: nanoid(),
       product_image: sunflower_oil,
       product_name: "Sunflower Oil - Stone Pressed & Organic",
+      product_description: " Authentic and Without Preservatives",
       product_price: 1799,
     },
   ];

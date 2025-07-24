@@ -1,1 +1,7 @@
-
+@keyframes bounce-cart {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.animate-bounce-cart {
+  animation: bounce-cart 0.5s ease-in-out;
+}
