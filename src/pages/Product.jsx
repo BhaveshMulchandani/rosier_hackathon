@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import ghee from "../assets/product_images/ghee.webp";
+import ghee from "../assets/product_images/Ghee.webp";
 import khapliatta from "../assets/product_images/khapli_aata.webp";
 import almond_butter from "../assets/product_images/almond_butter.webp";
 import Berry_better from "../assets/product_images/Berry_coconut_better_bar.webp";
