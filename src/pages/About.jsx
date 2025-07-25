@@ -12,11 +12,12 @@ const About = () => {
   return (
     <>
       <Navbar />
-      <div className="flex mt-6 flex-col h-screen">
+      <div className="flex mt-6 flex-col min-h-screen">
         {/* Left Side - Image */}
 
         <div className="md:w-1/2 w-full flex justify-center">
           <img
+          loading="lazy"
             src={firmcow}
             alt="cow"
             className="w-80 md:w-96 object-cover rounded-md shadow-md"
@@ -40,7 +41,7 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className="bg-[#FFF5F2] py-16 px-6 md:px-20">
+      <div className="bg-[#FFF5F2] py-16 px-6 md:px-20 min-h-screen">
         {/* Heading */}
         <h1 className="text-3xl md:text-4xl font-bold text-center text-[#4E342E] mb-12">
           WHAT OUR FOUNDERS SAY
@@ -51,11 +52,13 @@ const About = () => {
           {/* Founder Image */}
           <div className="flex-shrink-0">
             <img
+            loading="lazy"
               src={founder1}
               alt="Founder 1"
               className="rounded-lg h-52 w-52 object-cover shadow-md"
             />
             <img
+            loading="lazy"
               src={founder2}
               alt="Founder 2"
               className="mt-4 rounded-lg h-52 w-52 object-cover shadow-md"
@@ -104,13 +107,14 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex mt-10 flex-col h-screen">
+      <div className="flex mt-10 flex-col min-h-screen">
         {/* Left Side - Image */}
 
         <div className="md:w-1/2 w-full flex justify-center">
           <img
+          loading="lazy"
             src={rosier_product_family}
-            alt="cow"
+            alt="rosier-family"
             className="w-80 md:w-96 object-cover rounded-md shadow-md"
           />
         </div>
