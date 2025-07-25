@@ -25,7 +25,7 @@ const Login = () => {
             Logged Into Account
           </h2>
 
-          <form className="flex flex-col gap-4">
+          <form onSubmit={(e)=>{e.preventDefault(); navigate(`/`);}} className="flex flex-col gap-4">
             <input
             value={email}
               onChange={(e) => setemail(e.target.value)}
@@ -41,7 +41,7 @@ const Login = () => {
               className="px-4 py-3 rounded-lg border border-[#4E342E] text-[#795548] font-playfair text-lg placeholder:text-[#795548] hover:ring hover:ring-[#4E342E] bg-transparent outline-none"
             />
 
-            <button onClick={()=>navigate('/')} className="bg-[#4E342E] text-white py-3 rounded-lg font-semibold hover:bg-[#5d4037] transition duration-200">
+            <button type="submit" className="bg-[#4E342E] text-white py-3 rounded-lg font-semibold hover:bg-[#5d4037] transition duration-200">
               Login
             </button>
 
